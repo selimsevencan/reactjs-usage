@@ -3,8 +3,7 @@ export const FETCH_ISSUES_SUCCESS = "FETCH_ISSUES_SUCCESS";
 export const FETCH_ISSUES_FAILED = "FETCH_ISSUES_FAILED";
 
 export function createFetchIssues(repoName) {
-  const url = `${process.env.REACT_APP_API_BASE}users/${repoName}/issues`;
-
+  const url = `${process.env.REACT_APP_API_BASE}repos/reactjs/${repoName}/issues`;
   return async function(dispatch) {
     dispatch({
       type: FETCH_ISSUES,

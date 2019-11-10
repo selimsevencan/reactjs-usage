@@ -1,0 +1,7 @@
+.emptyStateWrapper {
+	text-align: center;
+	border: 1px solid grey;
+	padding: 30px;
+    font-size: 25px;
+    margin: 0 auto;
+}

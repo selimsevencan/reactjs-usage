@@ -2,9 +2,8 @@ export const FETCH_REPO = "FETCH_REPO";
 export const FETCH_REPO_SUCCESS = "FETCH_REPO_SUCCESS";
 export const FETCH_REPO_FAILED = "FETCH_REPO_FAILED";
 
-export function createFetchRepo(repoName) {
-  const url = `${process.env.REACT_APP_API_BASE}users/${repoName}/repos`;
-
+export function createFetchRepo(repoName, page) {
+  const url = `${process.env.REACT_APP_API_BASE}users/${repoName}/repos?page=${page}`;
   return async function(dispatch) {
     dispatch({
       type: FETCH_REPO,
