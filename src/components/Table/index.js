@@ -1,9 +1,16 @@
 import React from "react";
 import { Table, Segment, Loader } from "semantic-ui-react";
+import PaginationWrapper from '../common/Pagination';
 
 import { Link } from "react-router-dom";
+import EmptyState from "../common/EmptyState";
 
-export default function DataTable({ repos, loading }) {
+export default function DataTable({ 
+  repos,
+  loading,
+  page,
+  handlePage,
+}) {
   if (loading) {
     return (
       <Segment style={{ minHeight: 100 }}>
@@ -11,11 +18,17 @@ export default function DataTable({ repos, loading }) {
       </Segment>
     );
   }
+  if (!repos.length) {
+    return <EmptyState />
+  }
   return (
-    <Table celled>
+    <div className='tableWrapper'>
+      <Table 
+        celled
+      >
       <Table.Header>
         <Table.Row>
-          <Table.HeaderCell>Repo Name</Table.HeaderCell>
+          <Table.HeaderCell  href='#'>Repo Name</Table.HeaderCell>
           <Table.HeaderCell>Repo Link</Table.HeaderCell>
           <Table.HeaderCell>Programming Language</Table.HeaderCell>
           <Table.HeaderCell>License Name</Table.HeaderCell>
@@ -28,7 +41,7 @@ export default function DataTable({ repos, loading }) {
           return (
             <Table.Row key={item.id}>
               <Table.Cell>
-                  <Link to={`/issues/:${item.name}`}>
+                  <Link to={`/detail/:${item.name}`}>
                     {item.name}
                   </Link>
               </Table.Cell>
@@ -49,5 +62,15 @@ export default function DataTable({ repos, loading }) {
         })}
       </Table.Body>
     </Table>
+    <PaginationWrapper
+       boundaryRange={3}
+       siblingRange={1}
+       totalPages={3}
+       activePage={page}
+       onPageChange={(_, data) => {
+        return handlePage(data)
+       }}
+    />
+    </div>
   );
 }
