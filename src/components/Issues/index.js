@@ -50,10 +50,10 @@ export default class Issues extends Component {
                   <a
                     target={'_blank'}
                     rel={'nofollow noopener'}
-                    href={issue.url}
+                    href={issue.html_url}
 
                   >
-                   {issue.url}
+                   {issue.html_url}
                   </a>
                 </Card.Description>
               </Card.Content>

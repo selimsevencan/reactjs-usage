@@ -11,7 +11,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
 ## Dependencies
-```
-[Semantic UI React](https://react.semantic-ui.com/)
-[Redux](https://redux.js.org/)
-```
+
+[Semantic UI React](https://react.semantic-ui.com/).
+[Redux](https://redux.js.org/).
