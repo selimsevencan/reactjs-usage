@@ -42,7 +42,17 @@ export default class PullRequest extends Component {
               >
                 <Card.Content>
                   <Card.Header>{pr.title}</Card.Header>
-                  <Card.Meta>Creator: <strong>{pr.user.login}</strong></Card.Meta>
+                  <Card.Meta>Creator: 
+                    <a
+                       target={'_blank'}
+                       rel={'nofollow noopener'}
+                       href={pr.user.html_url}
+                    >
+                      <strong>
+                        {pr.user.login}
+                      </strong>
+                    </a>
+                  </Card.Meta>
                   <Card.Meta>
                     It is created at {createdDate}
                   </Card.Meta>

@@ -36,7 +36,13 @@ export default class Detail extends Component {
       <Card>
         <Card.Content>
           <Card.Header>
-            {detailsData.name}
+            <a
+              target={'_blank'}
+              rel={'nofollow noopener'}
+              href={detailsData.html_url}
+            >
+              {detailsData.name}
+            </a>
           </Card.Header>
           <Card.Meta>{detailsData.description}</Card.Meta>
           <Card.Description>

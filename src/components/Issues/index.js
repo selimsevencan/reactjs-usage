@@ -41,7 +41,17 @@ export default class Issues extends Component {
             >
               <Card.Content>
                 <Card.Header>{issue.title}</Card.Header>
-                <Card.Meta>Creator: <strong>{issue.user.login}</strong></Card.Meta>
+                <Card.Meta>Creator: 
+                  <a
+                    target={'_blank'}
+                    rel={'nofollow noopener'}
+                    href={issue.user.html_url}
+                  >
+                    <strong>
+                      {issue.user.login}
+                    </strong>
+                  </a>
+                  </Card.Meta>
                 <Card.Meta>
                   It is created at {createdDate}
                 </Card.Meta>
@@ -51,7 +61,6 @@ export default class Issues extends Component {
                     target={'_blank'}
                     rel={'nofollow noopener'}
                     href={issue.html_url}
-
                   >
                    {issue.html_url}
                   </a>
